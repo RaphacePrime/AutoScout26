@@ -33,204 +33,203 @@ namespace AutoScout24
 
         private void Catalogo_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
-            this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
-            // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Prodotti'. È possibile spostarla o rimuoverla se necessario.
-            this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
+            // TODO: 
+            
+      
         }
-
+        //TODO : cambia tutto
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
-            Aggiornamento();
+            //Aggiornamento();
         }
 
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
-            Aggiornamento();
+            //Aggiornamento();
         }
         public void Aggiornamento()
         {
-            string url = this.mazzoLuzziDataSet.Prodotti.urlColumn.ToString();
-            pictureBox1.ImageLocation=urlTextBox.Text;
+            //string url = this.mazzoLuzziDataSet.Prodotti.urlColumn.ToString();
+            //pictureBox1.ImageLocation=urlTextBox.Text;
         }
 
         private void fu_aggiungicarrello_Click(object sender, EventArgs e)
         {
-            if(fu_aggiungicarrello.Text == "AGGIUNTO AL CARRELLO!") { MessageBox.Show("Veicolo già aggiunto!");  }
-            else
-            {
-                fu_aggiungicarrello.Text = "AGGIUNTO AL CARRELLO!";
-                string codiceprodotto = codiceprodottoTextBox.Text;
-                MazzoLuzziDataSet.ProdottiRow riga = this.mazzoLuzziDataSet.Prodotti.FindBycodiceprodotto(codiceprodotto);
-                Prodotto P = new Prodotto(riga.codiceprodotto, riga.marca, riga.cilindrata, riga.modello, riga.prezzo, riga.tipologia,
-                    riga.n_chilometro, riga.url, riga.immatricolazione.ToString(), riga.username);
-                ListP.Add(P);
-                memvolatile.Add(riga.codiceprodotto);
-            }
+            //if(fu_aggiungicarrello.Text == "AGGIUNTO AL CARRELLO!") { MessageBox.Show("Veicolo già aggiunto!");  }
+            //else
+            //{
+            //    fu_aggiungicarrello.Text = "AGGIUNTO AL CARRELLO!";
+            //    string codiceprodotto = codiceprodottoTextBox.Text;
+            //    MazzoLuzziDataSet.ProdottiRow riga = this.mazzoLuzziDataSet.Prodotti.FindBycodiceprodotto(codiceprodotto);
+            //    Prodotto P = new Prodotto(riga.codiceprodotto, riga.marca, riga.cilindrata, riga.modello, riga.prezzo, riga.tipologia,
+            //        riga.n_chilometro, riga.url, riga.immatricolazione.ToString(), riga.username);
+            //    ListP.Add(P);
+            //    memvolatile.Add(riga.codiceprodotto);
+            //}
             
         }
 
         private void carrello_Click(object sender, EventArgs e)
         {
-            groupBoxCatalogo.Hide();
-            GroupBoxCarrello.Show();
-            checkedListBox1.Items.Clear();
-            foreach(var elemento in ListP)
-            {
-                string a = elemento.marca;
-                string b = elemento.modello;
-                string c = elemento.prezzo.ToString();
-                aggiornacostototale();
-                checkedListBox1.Items.Add(a + ";  " +b + ";  "+c + "€");
-            }
+        //    groupBoxCatalogo.Hide();
+        //    GroupBoxCarrello.Show();
+        //    checkedListBox1.Items.Clear();
+        //    foreach(var elemento in ListP)
+        //    {
+        //        string a = elemento.marca;
+        //        string b = elemento.modello;
+        //        string c = elemento.prezzo.ToString();
+        //        aggiornacostototale();
+        //        checkedListBox1.Items.Add(a + ";  " +b + ";  "+c + "€");
+        //    }
         }
 
         private void codiceprodottoTextBox_TextChanged(object sender, EventArgs e)
         {
-            aggiornainterfaccia();
+            //aggiornainterfaccia();
         }
         private void aggiornainterfaccia()
         {
-            string username = fu_labelutente.Text;
-            try
-            {
-                MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
-                Console.WriteLine("saldo nuovo= " + riga.saldo.ToString());
-                outputrigautente(riga);
-                fu_saldo.Text = riga.saldo.ToString();
-                label2.Text = riga.saldo.ToString();
-            }
-            catch (Exception fe)
-            {
-            }
-            outputlista();
-            if(memvolatile.Count==0)
-            {
-                fu_aggiungicarrello.Text = "AGGIUNGI AL CARRELLO";
-            }
-            else
-            {
-                foreach (string tap in memvolatile)
-                {
-                    if (tap == codiceprodottoTextBox.Text)
-                    {
-                        fu_aggiungicarrello.Text = "AGGIUNTO AL CARRELLO!";
-                        break;
-                    }
-                    else
-                    {
-                        fu_aggiungicarrello.Text = "AGGIUNGI AL CARRELLO";
-                    }
-                }
-            }
+            //string username = fu_labelutente.Text;
+            //try
+            //{
+            //    MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
+            //    Console.WriteLine("saldo nuovo= " + riga.saldo.ToString());
+            //    outputrigautente(riga);
+            //    fu_saldo.Text = riga.saldo.ToString();
+            //    label2.Text = riga.saldo.ToString();
+            //}
+            //catch (Exception fe)
+            //{
+            //}
+            //outputlista();
+            //if(memvolatile.Count==0)
+            //{
+            //    fu_aggiungicarrello.Text = "AGGIUNGI AL CARRELLO";
+            //}
+            //else
+            //{
+            //    foreach (string tap in memvolatile)
+            //    {
+            //        if (tap == codiceprodottoTextBox.Text)
+            //        {
+            //            fu_aggiungicarrello.Text = "AGGIUNTO AL CARRELLO!";
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            fu_aggiungicarrello.Text = "AGGIUNGI AL CARRELLO";
+            //        }
+            //    }
+            //}
             
         }
         private void outputlista()
         {
-            foreach (string tap in memvolatile)
-            {
-                Console.WriteLine("MEMVOL:"+tap);
-            }
+            //foreach (string tap in memvolatile)
+            //{
+            //    Console.WriteLine("MEMVOL:"+tap);
+            //}
         }
         private void aggiornacostototale()
         {
-            totale = 0;
-            foreach (var elemento in ListP)
-            {
-                totale += elemento.prezzo;
-            }
-            totalecosto.Text = totale.ToString();
+        //    totale = 0;
+        //    foreach (var elemento in ListP)
+        //    {
+        //        totale += elemento.prezzo;
+        //    }
+        //    totalecosto.Text = totale.ToString();
         }
 
         private void eliminazionedacarrello_Click(object sender, EventArgs e)
         {
-            if (checkedListBox1.Items.Count == 1) { memvolatile.Clear(); }
-            else
-            {
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
-                {
+            //if (checkedListBox1.Items.Count == 1) { memvolatile.Clear(); }
+            //else
+            //{
+            //    for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            //    {
 
-                    if (checkedListBox1.GetItemChecked(i))
-                    {
-                        checkedListBox1.Items.RemoveAt(i);
-                        memvolatile.RemoveAt(i);
-                        ListP.RemoveAt(i);
-                        i = 0;
-                        //aggiornainterfaccia();
-                        //aggiornacostototale();    
-                    }
-                }
-            }            
-            aggiornainterfaccia();
-            aggiornacostototale();
+            //        if (checkedListBox1.GetItemChecked(i))
+            //        {
+            //            checkedListBox1.Items.RemoveAt(i);
+            //            memvolatile.RemoveAt(i);
+            //            ListP.RemoveAt(i);
+            //            i = 0;
+            //            //aggiornainterfaccia();
+            //            //aggiornacostototale();    
+            //        }
+            //    }
+            //}            
+            //aggiornainterfaccia();
+            //aggiornacostototale();
         }
 
         private void acquista_Click(object sender, EventArgs e)
         {
             
-            // switchschermata();
-            int nuovosaldo1 = Int32.Parse(label2.Text);Console.WriteLine(label2);
-            int nuovosaldo2 = Int32.Parse(totalecosto.Text); Console.WriteLine(totalecosto);           
-            int nuovosaldo = nuovosaldo1 - nuovosaldo2;
-            //MessageBox.Show("Il tuo nuovo saldo: " + nuovosaldo);
-            DialogResult dr = MessageBox.Show("CONFERMA DI ACQUISTO", "Sei sicuro di voler acquistare i " +
-                "prodotti nel carrello?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            if (dr == DialogResult.Yes)
-            {            
-                foreach (var tap in memvolatile)
-                {
-                    Console.WriteLine("SIUUUUUM "+tap);                
-                    MazzoLuzziDataSet.ProdottiRow rigaprodotto = mazzoLuzziDataSet.Prodotti.FindBycodiceprodotto(tap);
-                    outputrigaprodotto(rigaprodotto);                
-                    this.prodottiTableAdapter.Delete(rigaprodotto.codiceprodotto, rigaprodotto.marca, 
-                        rigaprodotto.cilindrata, rigaprodotto.modello, rigaprodotto.tipologia,
-                        rigaprodotto.n_chilometro, rigaprodotto.url, rigaprodotto.immatricolazione, 
-                        rigaprodotto.prezzo, rigaprodotto.username);               
-                    AggiornaProdotti();
-                }
-                MazzoLuzziDataSet.UtentiRow rigautente = mazzoLuzziDataSet.Utenti.FindByusername(U.username);
+            //// switchschermata();
+            //int nuovosaldo1 = Int32.Parse(label2.Text);Console.WriteLine(label2);
+            //int nuovosaldo2 = Int32.Parse(totalecosto.Text); Console.WriteLine(totalecosto);           
+            //int nuovosaldo = nuovosaldo1 - nuovosaldo2;
+            ////MessageBox.Show("Il tuo nuovo saldo: " + nuovosaldo);
+            //DialogResult dr = MessageBox.Show("CONFERMA DI ACQUISTO", "Sei sicuro di voler acquistare i " +
+            //    "prodotti nel carrello?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            //if (dr == DialogResult.Yes)
+            //{            
+            //    foreach (var tap in memvolatile)
+            //    {
+            //        Console.WriteLine("SIUUUUUM "+tap);                
+            //        MazzoLuzziDataSet.ProdottiRow rigaprodotto = mazzoLuzziDataSet.Prodotti.FindBycodiceprodotto(tap);
+            //        outputrigaprodotto(rigaprodotto);                
+            //        this.prodottiTableAdapter.Delete(rigaprodotto.codiceprodotto, rigaprodotto.marca, 
+            //            rigaprodotto.cilindrata, rigaprodotto.modello, rigaprodotto.tipologia,
+            //            rigaprodotto.n_chilometro, rigaprodotto.url, rigaprodotto.immatricolazione, 
+            //            rigaprodotto.prezzo, rigaprodotto.username);               
+            //        AggiornaProdotti();
+            //    }
+            //    MazzoLuzziDataSet.UtentiRow rigautente = mazzoLuzziDataSet.Utenti.FindByusername(U.username);
                 
                 
-                mazzoLuzziDataSet.Utenti.AcceptChanges();
-                MessageBox.Show("Il tuo nuovo saldo: " + nuovosaldo);
+            //    mazzoLuzziDataSet.Utenti.AcceptChanges();
+            //    MessageBox.Show("Il tuo nuovo saldo: " + nuovosaldo);
 
 
 
-                string a = rigautente.username;
-                string b = rigautente.nomecognome;
-                string c = rigautente.codicefiscale;
-                string d = rigautente.password;
-                int ef = rigautente.saldo;
-                this.utentiTableAdapter.Delete(a, b, c, d, ef);
-                this.utentiTableAdapter.Insert(a, b, c, d, nuovosaldo);
+            //    string a = rigautente.username;
+            //    string b = rigautente.nomecognome;
+            //    string c = rigautente.codicefiscale;
+            //    string d = rigautente.password;
+            //    int ef = rigautente.saldo;
+            //    this.utentiTableAdapter.Delete(a, b, c, d, ef);
+            //    this.utentiTableAdapter.Insert(a, b, c, d, nuovosaldo);
                 
-                AggiornaUtenti();
-                memvolatile.Clear();
-                ListP.Clear();
-                aggiornainterfaccia();
+            //    AggiornaUtenti();
+            //    memvolatile.Clear();
+            //    ListP.Clear();
+            //    aggiornainterfaccia();
                 
-            }
-            else if (dr == DialogResult.Cancel)
-            {
-                MessageBox.Show("Acquisto annullato!");
-            }
+            //}
+            //else if (dr == DialogResult.Cancel)
+            //{
+            //    MessageBox.Show("Acquisto annullato!");
+            //}
         }
         private void AggiornaProdotti()
         {
-            this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
-            prodottiBindingSource.ResetBindings(true);
-            tableAdapterManager.UpdateAll(mazzoLuzziDataSet);
-            mazzoLuzziDataSet.Prodotti.AcceptChanges();
-            mazzoLuzziDataSet.AcceptChanges();
+        //    this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
+        //    prodottiBindingSource.ResetBindings(true);
+        //    tableAdapterManager.UpdateAll(mazzoLuzziDataSet);
+        //    mazzoLuzziDataSet.Prodotti.AcceptChanges();
+        //    mazzoLuzziDataSet.AcceptChanges();
         }
 
         private void AggiornaUtenti()
         {
-            this.Validate();
-            this.utentiBindingSource.EndEdit();
-            this.utentiTableAdapter.Update(mazzoLuzziDataSet);
-            this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
-            utentiBindingSource.ResetBindings(true);
+            //this.Validate();
+            //this.utentiBindingSource.EndEdit();
+            //this.utentiTableAdapter.Update(mazzoLuzziDataSet);
+            //this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+            //utentiBindingSource.ResetBindings(true);
            //tableAdapterManager.UpdateAll(mazzoLuzziDataSet);            
             //mazzoLuzziDataSet.Utenti.AcceptChanges();
            // mazzoLuzziDataSet.AcceptChanges();
@@ -238,12 +237,12 @@ namespace AutoScout24
         }
         public void outputrigautente(MazzoLuzziDataSet.UtentiRow riga)
         {
-            Console.WriteLine("UTENTE: "+riga.nomecognome+ riga.codicefiscale + riga.password + riga.username + riga.saldo);
+            //Console.WriteLine("UTENTE: "+riga.nomecognome+ riga.codicefiscale + riga.password + riga.username + riga.saldo);
         }
         public void outputrigaprodotto(MazzoLuzziDataSet.ProdottiRow riga)
         {
-            Console.WriteLine("PRODOTTO: "+riga.codiceprodotto+ riga.marca+riga.cilindrata + riga.modello + riga.prezzo + riga.tipologia +
-                    riga.n_chilometro + riga.url + riga.immatricolazione.ToString() + riga.username);
+            //Console.WriteLine("PRODOTTO: "+riga.codiceprodotto+ riga.marca+riga.cilindrata + riga.modello + riga.prezzo + riga.tipologia +
+            //        riga.n_chilometro + riga.url + riga.immatricolazione.ToString() + riga.username);
         }
 
        /* public void switchschermata()
@@ -262,8 +261,8 @@ namespace AutoScout24
 
         private void back_Click(object sender, EventArgs e)
         {
-            groupBoxCatalogo.Show();
-            GroupBoxCarrello.Hide();
+            //groupBoxCatalogo.Show();
+            //GroupBoxCarrello.Hide();
             //switchschermata();
         }
     }
