@@ -13,6 +13,7 @@ namespace AutoScout24
     public partial class Form1 : Form
     {
         Utente U;
+        System.Data.OleDb.OleDbConnection conn;
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +22,12 @@ namespace AutoScout24
         {
             // TODO: cambia qui
             //this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+            string connstr;
+            connstr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=MazzoLuzzi.accdb;";
+
+            conn = new System.Data.OleDb.OleDbConnection(connstr);
+
+            conn.Open();
 
 
 
@@ -35,7 +42,7 @@ namespace AutoScout24
 
             U = new Utente();
             var a = new Catalogo(U);
-            a.ShowDialog();
+            //a.ShowDialog();
             // TODO: cambia qui
             //try
             //{
@@ -62,6 +69,36 @@ namespace AutoScout24
             //    label3.Text = "Username non esistente";
             //    label3.Visible=true;
             //}
+
+
+            System.Data.OleDb.OleDbCommand cmd;
+            System.Data.OleDb.OleDbDataReader rs;
+
+
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+
+            string sql;
+            sql = "SELECT username, password FROM Utenti;";
+            cmd.CommandText = sql;
+
+            rs = cmd.ExecuteReader();
+            tDati.Text = "";
+            while (rs.Read())
+            {
+                if(password== rs["password"].ToString() && username== rs["username"].ToString())
+                {
+                    tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                    a.ShowDialog();
+                    break;
+                }
+                else
+                {
+                    label3.Text = "ERRORE";
+                    label3.Visible = true;
+                }
+                
+            }
 
         }
 
@@ -115,7 +152,7 @@ namespace AutoScout24
             string password = f1_password.Text;
             U = new Utente();
             var a = new Vendi(U);
-            a.ShowDialog();
+            
             // TODO: cambia qui
 
             //try
@@ -124,7 +161,7 @@ namespace AutoScout24
             //    string password1 = riga.password;// label3.Text = riga.password;
             //    if (password == password1)
             //    {
-                    
+
             //    }
             //    else
             //    {
@@ -139,6 +176,35 @@ namespace AutoScout24
             //    label3.Text = "Username non esistente";
             //    label3.Visible = true;
             //}
+
+            System.Data.OleDb.OleDbCommand cmd;
+            System.Data.OleDb.OleDbDataReader rs;
+
+
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+
+            string sql;
+            sql = "SELECT username, password FROM Utenti;";
+            cmd.CommandText = sql;
+
+            rs = cmd.ExecuteReader();
+            tDati.Text = "";
+            while (rs.Read())
+            {
+                if (password == rs["password"].ToString() && username == rs["username"].ToString())
+                {
+                    tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                    a.ShowDialog();
+                    break;
+                }
+                else
+                {
+                    label3.Text = "ERRORE";
+                    label3.Visible = true;
+                }
+
+            }
         }
 
         
