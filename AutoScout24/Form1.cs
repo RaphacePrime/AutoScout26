@@ -19,8 +19,8 @@ namespace AutoScout24
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
-            this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+            // TODO: cambia qui
+            //this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
 
 
 
@@ -31,36 +31,45 @@ namespace AutoScout24
             label3.Visible = false;
             string username = f1_username.Text;
             string password = f1_password.Text;
-            try
-            {
-                MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
-                string password1 = riga.password;// label3.Text = riga.password;
-                if(password== riga.password)
-                {
-                    U = new Utente(riga.nomecognome, riga.codicefiscale, riga.password, riga.username, riga.saldo);
-                    var a = new Catalogo(U);
-                    a.ShowDialog();
-                }
-                else
-                {
-                    label3.Text = "Password errata";
-                    MessageBox.Show("Password errata");
-                }
 
 
-                
-            }
-            catch(Exception fe)
-            {
-                MessageBox.Show("UTENTE NON ESISTENTE");
-                label3.Text = "Username non esistente";
-                label3.Visible=true;
-            }
-            
+            U = new Utente();
+            var a = new Catalogo(U);
+            a.ShowDialog();
+            // TODO: cambia qui
+            //try
+            //{
+            //    MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
+            //    string password1 = riga.password;// label3.Text = riga.password;
+            //    if(password== riga.password)
+            //    {
+            //        U = new Utente(riga.nomecognome, riga.codicefiscale, riga.password, riga.username, riga.saldo);
+            //        var a = new Catalogo(U);
+            //        a.ShowDialog();
+            //    }
+            //    else
+            //    {
+            //        label3.Text = "Password errata";
+            //        MessageBox.Show("Password errata");
+            //    }
+
+
+
+            //}
+            //catch(Exception fe)
+            //{
+            //    MessageBox.Show("UTENTE NON ESISTENTE");
+            //    label3.Text = "Username non esistente";
+            //    label3.Visible=true;
+            //}
+
         }
 
         private void f1_admin_Click(object sender, EventArgs e)
         {
+
+
+
             label3.Visible = false;
             if (f1_username.Text=="alunno"&&f1_password.Text=="alunno")
             {
@@ -74,14 +83,15 @@ namespace AutoScout24
             }
             
         }
+        // TODO: cambia qui
 
-        private void utentiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.utentiBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
+        //private void utentiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        //{
+        //    this.Validate();
+        //    this.utentiBindingSource.EndEdit();
+        //    this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
 
-        }
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -103,34 +113,34 @@ namespace AutoScout24
             label3.Visible = false;
             string username = f1_username.Text;
             string password = f1_password.Text;
-            try
-            {
-                MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
-                string password1 = riga.password;// label3.Text = riga.password;
-                if (password == password1)
-                {
-                    U = new Utente(riga.nomecognome, riga.codicefiscale, riga.password, riga.username, riga.saldo);
-                    var a = new Vendi(U);
-                    a.ShowDialog();
-                }
-                else
-                {
-                    label3.Text = "Password errata";
-                }
+            U = new Utente();
+            var a = new Vendi(U);
+            a.ShowDialog();
+            // TODO: cambia qui
+
+            //try
+            //{
+            //    MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
+            //    string password1 = riga.password;// label3.Text = riga.password;
+            //    if (password == password1)
+            //    {
+                    
+            //    }
+            //    else
+            //    {
+            //        label3.Text = "Password errata";
+            //    }
 
 
 
-            }
-            catch (Exception fe)
-            {
-                label3.Text = "Username non esistente";
-                label3.Visible = true;
-            }
+            //}
+            //catch (Exception fe)
+            //{
+            //    label3.Text = "Username non esistente";
+            //    label3.Visible = true;
+            //}
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

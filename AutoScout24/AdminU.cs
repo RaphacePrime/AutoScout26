@@ -17,18 +17,19 @@ namespace AutoScout24
             InitializeComponent();
         }
 
-        private void utentiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.utentiBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
+        // TODO: cambia qui
+        //private void utentiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        //{
+        //    this.Validate();
+        //    this.utentiBindingSource.EndEdit();
+        //    this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
 
-        }
+        //}
 
         private void AdminU_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
-            this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+        //    // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
+        //    this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
 
         }
     }

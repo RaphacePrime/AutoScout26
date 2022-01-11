@@ -294,7 +294,7 @@ namespace AutoScout24
             this.utentiBindingNavigatorSaveItem.Name = "utentiBindingNavigatorSaveItem";
             this.utentiBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 18);
             this.utentiBindingNavigatorSaveItem.Text = "Salva dati";
-            this.utentiBindingNavigatorSaveItem.Click += new System.EventHandler(this.utentiBindingNavigatorSaveItem_Click);
+            //this.utentiBindingNavigatorSaveItem.Click += new System.EventHandler(this.utentiBindingNavigatorSaveItem_Click);
             // 
             // label3
             // 
@@ -345,7 +345,7 @@ namespace AutoScout24
             this.label5.Size = new System.Drawing.Size(273, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Per accedere a SFOGLIA CATALOGO e VENDI AUTO: ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+//            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
