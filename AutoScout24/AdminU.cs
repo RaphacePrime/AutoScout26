@@ -12,6 +12,7 @@ namespace AutoScout24
 {
     public partial class AdminU : Form
     {
+        System.Data.OleDb.OleDbConnection conn;
         public AdminU()
         {
             InitializeComponent();
@@ -28,8 +29,37 @@ namespace AutoScout24
 
         private void AdminU_Load(object sender, EventArgs e)
         {
-        //    // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
-        //    this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+            //    // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
+            //    this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+            string connstr;
+            connstr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=MazzoLuzzi.accdb;";
+            conn = new System.Data.OleDb.OleDbConnection(connstr);
+            conn.Open();
+            caricaListBox();
+        }
+
+        private void caricaListBox()
+        {
+            System.Data.OleDb.OleDbCommand cmd;
+            System.Data.OleDb.OleDbDataReader rs;
+
+
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+
+            string sql;
+            sql = "SELECT * FROM Utenti;";
+            cmd.CommandText = sql;
+            listBoxU.Items.Clear();
+            rs = cmd.ExecuteReader();
+            while (rs.Read())
+            {
+                listBoxU.Items.Add(rs["username"].ToString() + " " + rs["nomecognome"].ToString() +" "+ rs["codicefiscale"].ToString() +" "+ rs["password"].ToString() +" "+ rs["saldo"].ToString());
+            }
+        }
+
+        private void buttonAggiungi_Click(object sender, EventArgs e)
+        {
 
         }
     }

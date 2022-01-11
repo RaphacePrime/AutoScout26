@@ -12,6 +12,7 @@ namespace AutoScout24
 {
     public partial class Admin : Form
     {
+        System.Data.OleDb.OleDbConnection conn;
         public Admin()
         {
             InitializeComponent();
@@ -28,10 +29,38 @@ namespace AutoScout24
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            
-        //    this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
-            
-        //    this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
+
+            //    this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+
+            //    this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
+            string connstr;
+            connstr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=MazzoLuzzi.accdb;";
+            conn = new System.Data.OleDb.OleDbConnection(connstr);
+            conn.Open();
+            caricaListBox();
+        }
+        private void caricaListBox()
+        {
+            System.Data.OleDb.OleDbCommand cmd;
+            System.Data.OleDb.OleDbDataReader rs;
+
+
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+
+            string sql;
+            sql = "SELECT * FROM Prodotti;";
+            cmd.CommandText = sql;
+            listBoxAuto.Items.Clear();
+            rs = cmd.ExecuteReader();
+            while (rs.Read())
+            {
+                listBoxAuto.Items.Add(rs["codiceprodotto"].ToString() + " " + rs["marca"].ToString() + " " + rs["cilindrata"].ToString() + " " + rs["modello"].ToString() + " " + rs["tipologia"].ToString() + " " + rs["n_chilometro"].ToString() + " " + rs["url"].ToString() + " " + rs["immatricolazione"].ToString() + " " + rs["prezzo"].ToString() + " " + rs["username"].ToString());
+            }
+        }
+
+        private void buttonAggiungi_Click(object sender, EventArgs e)
+        {
 
         }
     }

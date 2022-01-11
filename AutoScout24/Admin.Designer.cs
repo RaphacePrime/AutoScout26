@@ -36,6 +36,10 @@ namespace AutoScout24
             this.tableAdapterManager = new AutoScout24.MazzoLuzziDataSetTableAdapters.TableAdapterManager();
             this.utentiTableAdapter = new AutoScout24.MazzoLuzziDataSetTableAdapters.UtentiTableAdapter();
             this.utentiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listBoxAuto = new System.Windows.Forms.ListBox();
+            this.buttonAggiungi = new System.Windows.Forms.Button();
+            this.buttonElimina = new System.Windows.Forms.Button();
+            this.buttonModifica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).BeginInit();
@@ -71,12 +75,52 @@ namespace AutoScout24
             this.utentiBindingSource.DataMember = "Utenti";
             this.utentiBindingSource.DataSource = this.mazzoLuzziDataSet;
             // 
+            // listBoxAuto
+            // 
+            this.listBoxAuto.FormattingEnabled = true;
+            this.listBoxAuto.Location = new System.Drawing.Point(12, 80);
+            this.listBoxAuto.Name = "listBoxAuto";
+            this.listBoxAuto.Size = new System.Drawing.Size(1085, 550);
+            this.listBoxAuto.TabIndex = 0;
+            // 
+            // buttonAggiungi
+            // 
+            this.buttonAggiungi.Location = new System.Drawing.Point(12, 12);
+            this.buttonAggiungi.Name = "buttonAggiungi";
+            this.buttonAggiungi.Size = new System.Drawing.Size(78, 59);
+            this.buttonAggiungi.TabIndex = 3;
+            this.buttonAggiungi.Text = "Aggiungi auto";
+            this.buttonAggiungi.UseVisualStyleBackColor = true;
+            this.buttonAggiungi.Click += new System.EventHandler(this.buttonAggiungi_Click);
+            // 
+            // buttonElimina
+            // 
+            this.buttonElimina.Location = new System.Drawing.Point(96, 12);
+            this.buttonElimina.Name = "buttonElimina";
+            this.buttonElimina.Size = new System.Drawing.Size(78, 59);
+            this.buttonElimina.TabIndex = 4;
+            this.buttonElimina.Text = "Elimina auto";
+            this.buttonElimina.UseVisualStyleBackColor = true;
+            // 
+            // buttonModifica
+            // 
+            this.buttonModifica.Location = new System.Drawing.Point(180, 12);
+            this.buttonModifica.Name = "buttonModifica";
+            this.buttonModifica.Size = new System.Drawing.Size(78, 59);
+            this.buttonModifica.TabIndex = 5;
+            this.buttonModifica.Text = "Modifica auto";
+            this.buttonModifica.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1783, 690);
+            this.ClientSize = new System.Drawing.Size(1109, 642);
+            this.Controls.Add(this.buttonModifica);
+            this.Controls.Add(this.buttonElimina);
+            this.Controls.Add(this.buttonAggiungi);
+            this.Controls.Add(this.listBoxAuto);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Admin";
             this.Text = "Admin";
@@ -96,5 +140,9 @@ namespace AutoScout24
         private MazzoLuzziDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private MazzoLuzziDataSetTableAdapters.UtentiTableAdapter utentiTableAdapter;
         private System.Windows.Forms.BindingSource utentiBindingSource;
+        private System.Windows.Forms.ListBox listBoxAuto;
+        private System.Windows.Forms.Button buttonAggiungi;
+        private System.Windows.Forms.Button buttonElimina;
+        private System.Windows.Forms.Button buttonModifica;
     }
 }
