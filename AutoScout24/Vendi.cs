@@ -32,7 +32,7 @@ namespace AutoScout24
             string url = textBox7.Text;
             string imm = dataImmatricolazionePicker.ToString();
             string u = U.username;
-
+            
             // TODO: cambia qui
             //Prodotto P = new Prodotto(cp,c,mar,mod,tip,nk,url,imm,u);
             //MazzoLuzziDataSet.ProdottiRow nuovoprodotto = mazzoLuzziDataSet.Prodotti.NewProdottiRow();

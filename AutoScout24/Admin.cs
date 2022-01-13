@@ -61,6 +61,12 @@ namespace AutoScout24
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
         {
+            AggiungiAuto m = new AggiungiAuto();
+            m.Show();
+        }
+
+        private void buttonElimina_Click(object sender, EventArgs e)
+        {
 
         }
     }

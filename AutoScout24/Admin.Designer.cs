@@ -101,6 +101,7 @@ namespace AutoScout24
             this.buttonElimina.TabIndex = 4;
             this.buttonElimina.Text = "Elimina auto";
             this.buttonElimina.UseVisualStyleBackColor = true;
+            this.buttonElimina.Click += new System.EventHandler(this.buttonElimina_Click);
             // 
             // buttonModifica
             // 
