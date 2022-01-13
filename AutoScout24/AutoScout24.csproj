@@ -67,11 +67,11 @@
     <Compile Include="AdminU.Designer.cs">
       <DependentUpon>AdminU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Catalogo.cs">
+    <Compile Include="Catalogonuovo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Catalogo.Designer.cs">
-      <DependentUpon>Catalogo.cs</DependentUpon>
+    <Compile Include="Catalogonuovo.Designer.cs">
+      <DependentUpon>Catalogonuovo.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -103,8 +103,8 @@
     <EmbeddedResource Include="AdminU.resx">
       <DependentUpon>AdminU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Catalogo.resx">
-      <DependentUpon>Catalogo.cs</DependentUpon>
+    <EmbeddedResource Include="Catalogonuovo.resx">
+      <DependentUpon>Catalogonuovo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -151,6 +151,7 @@
     <Content Include="MazzoLuzzi.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Back - Copia.png" />
     <None Include="Resources\Back.png" />
     <None Include="Resources\carrello.png" />
   </ItemGroup>
