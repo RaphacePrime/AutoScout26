@@ -29,27 +29,19 @@ namespace AutoScout24
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ListaVeicoli = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(283, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(119, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // ListaVeicoli
             // 
             this.ListaVeicoli.FormattingEnabled = true;
-            this.ListaVeicoli.Location = new System.Drawing.Point(49, 158);
+            this.ListaVeicoli.Location = new System.Drawing.Point(12, 120);
             this.ListaVeicoli.Name = "ListaVeicoli";
-            this.ListaVeicoli.Size = new System.Drawing.Size(120, 95);
+            this.ListaVeicoli.Size = new System.Drawing.Size(158, 147);
             this.ListaVeicoli.TabIndex = 2;
             this.ListaVeicoli.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -83,17 +75,25 @@ namespace AutoScout24
             this.label1.TabIndex = 4;
             this.label1.Text = "Catalogo";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(242, 120);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(210, 139);
+            this.checkedListBox1.TabIndex = 5;
+            // 
             // Catalogo2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(464, 452);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ListaVeicoli);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Catalogo2";
             this.Text = "Catalogo2";
@@ -104,11 +104,10 @@ namespace AutoScout24
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox ListaVeicoli;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
