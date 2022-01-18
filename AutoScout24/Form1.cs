@@ -89,7 +89,7 @@ namespace AutoScout24
                 if(password== rs["password"].ToString() && username== rs["username"].ToString())
                 {
                     tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
-                    a.ShowDialog();
+                    //a.ShowDialog();
                     break;
                 }
                 else
