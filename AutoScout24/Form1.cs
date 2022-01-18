@@ -79,7 +79,7 @@ namespace AutoScout24
             cmd.Connection = conn;
 
             string sql;
-            sql = "SELECT username, password FROM Utenti;";
+            sql = "SELECT username, password, nomecognome, saldo, codicefiscale FROM Utenti;";
             cmd.CommandText = sql;
 
             rs = cmd.ExecuteReader();
@@ -89,6 +89,7 @@ namespace AutoScout24
                 if(password== rs["password"].ToString() && username== rs["username"].ToString())
                 {
                     tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                    U = new Utente(rs["nomecognome"].ToString(), rs["codicefiscale"].ToString(), rs["password"].ToString(), rs["username"].ToString(), float.Parse(rs["saldo"].ToString()));
                     //a.ShowDialog();
                     break;
                 }
@@ -148,7 +149,7 @@ namespace AutoScout24
             string username = f1_username.Text;
             string password = f1_password.Text;
             U = new Utente();
-            var a = new Vendi(U);
+            
             
             // TODO: cambia qui
 
@@ -182,7 +183,7 @@ namespace AutoScout24
             cmd.Connection = conn;
 
             string sql;
-            sql = "SELECT username, password FROM Utenti;";
+            sql = "SELECT username, password, nomecognome, saldo, codicefiscale FROM Utenti;";
             cmd.CommandText = sql;
 
             rs = cmd.ExecuteReader();
@@ -192,6 +193,8 @@ namespace AutoScout24
                 if (password == rs["password"].ToString() && username == rs["username"].ToString())
                 {
                     tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                    U = new Utente(rs["nomecognome"].ToString(), rs["codicefiscale"].ToString(), rs["password"].ToString(), rs["username"].ToString(), float.Parse(rs["saldo"].ToString()));
+                    var a = new Vendi(U);
                     a.ShowDialog();
                     break;
                 }
