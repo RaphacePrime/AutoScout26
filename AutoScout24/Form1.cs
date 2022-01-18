@@ -41,7 +41,7 @@ namespace AutoScout24
 
 
             U = new Utente();
-            var a = new Catalogonuovo();
+            //var a = new Catalogonuovo();
             //a.ShowDialog();
             // TODO: cambia qui
             //try
