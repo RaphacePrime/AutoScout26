@@ -13,71 +13,39 @@ namespace AutoScout24
     public partial class Vendi : Form
     {
         Utente U = new Utente();
+        System.Data.OleDb.OleDbConnection conn;
         public Vendi(Utente U)
         {
-            
-            InitializeComponent();
             this.U = U;
+            InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        public Vendi()
         {
-            string cp = textBox1.Text;
-            string mar = textBox2.Text;
-            int c = Int32.Parse(textBox3.Text);
-            string d1 = textBox4.Text;
-            float mod = float.Parse(d1);
-            string tip = comboBox1.Text;
-            int nk = Int32.Parse(textBox6.Text); 
-            string url = textBox7.Text;
-            string imm = dataImmatricolazionePicker.ToString();
-            string u = U.username;
-            
-            // TODO: cambia qui
-            //Prodotto P = new Prodotto(cp,c,mar,mod,tip,nk,url,imm,u);
-            //MazzoLuzziDataSet.ProdottiRow nuovoprodotto = mazzoLuzziDataSet.Prodotti.NewProdottiRow();
-            //nuovoprodotto.codiceprodotto = P.codiceprodotto;
-            //nuovoprodotto.cilindrata = P.cilindrata;
-            //nuovoprodotto.modello = P.modello;
-            //nuovoprodotto.marca = P.marca;
-            //nuovoprodotto.prezzo = Int32.Parse((P.prezzo).ToString());
-            //nuovoprodotto.n_chilometro = P.n_chilometro;
-            //nuovoprodotto.tipologia = P.tipologia;
-            //nuovoprodotto.url = P.url;
-            //nuovoprodotto.username = P.username;
-            //nuovoprodotto.immatricolazione = dataImmatricolazionePicker.Value;
-            //this.prodottiTableAdapter.Insert(nuovoprodotto.codiceprodotto, nuovoprodotto.marca, nuovoprodotto.cilindrata, nuovoprodotto.modello, nuovoprodotto.tipologia, nuovoprodotto.n_chilometro,
-            //    nuovoprodotto.url, nuovoprodotto.immatricolazione, nuovoprodotto.prezzo, nuovoprodotto.username);   
-
-            ////    MazzoLuzziDataSet.UtentiRow rigautentenuova = mazzoLuzziDataSet.Utenti.NewUtentiRow();
-            ////rigautentenuova.nomecognome = rigautente.nomecognome; rigautentenuova.codicefiscale = rigautente.codicefiscale; rigautentenuova.password = rigautente.password; rigautentenuova.username = rigautente.username; rigautentenuova.saldo = nuovosaldo;
-            //AggiornaProdotti();
-            //mazzoLuzziDataSet.AcceptChanges();
-            MessageBox.Show("Auto inserita correttamente");
-            this.Close();
+            InitializeComponent();
         }
-        // TODO: cambia qui
-        //private void AggiornaProdotti()
-        //{
-        //    this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
-        //    prodottiBindingSource.ResetBindings(true);
-        //    tableAdapterManager.UpdateAll(mazzoLuzziDataSet);
-        //}
-
-        //private void prodottiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-        //    this.prodottiBindingSource.EndEdit();
-        //    this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
-
-        //}
-
+        
         private void Vendi_Load(object sender, EventArgs e)
-        { 
-        //{
-        //    // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Prodotti'. È possibile spostarla o rimuoverla se necessario.
-        //    this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
+        {
+            string connstr;
+            connstr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=MazzoLuzzi.accdb;";
+            conn = new System.Data.OleDb.OleDbConnection(connstr);
+            conn.Open();
+            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+        }
 
+        private void buttonAggiungi_Click_1(object sender, EventArgs e)
+        {
+            System.Data.OleDb.OleDbCommand cmd;
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+            string sql;
+            sql = "INSERT into Prodotti (codiceprodotto,marca,cilindrata,modello,tipologia,n_chilometro,url,immatricolazione,prezzo,username) VALUES('" + codiceTxt.Text + "','" + marcaTxt.Text + "','" + Int32.Parse(cilindrataTxt.Text) + "','" + modelloTxt.Text + "','" + tipologiaTxt.Text + "','" + Int32.Parse(kmTxt.Text) + "','" + urlTxt.Text + "'," + dateTimePicker1.Value.ToString("dd/MM/yyyy") + ",'" + float.Parse(prezzoTxt.Text) + "','" + U.username + "');";
+            MessageBox.Show(sql);
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Inserimento effettuato");
+            this.Close();
         }
     }
 }
