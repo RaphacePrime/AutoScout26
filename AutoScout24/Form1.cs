@@ -104,9 +104,6 @@ namespace AutoScout24
 
         private void f1_admin_Click(object sender, EventArgs e)
         {
-
-
-
             label3.Visible = false;
             if (f1_username.Text=="alunno"&&f1_password.Text=="alunno")
             {
