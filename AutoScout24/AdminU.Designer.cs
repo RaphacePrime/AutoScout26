@@ -78,6 +78,7 @@ namespace AutoScout24
             this.buttonElimina.TabIndex = 1;
             this.buttonElimina.Text = "Elimina utente selezionata";
             this.buttonElimina.UseVisualStyleBackColor = true;
+            this.buttonElimina.Click += new System.EventHandler(this.buttonElimina_Click);
             // 
             // buttonAggiungi
             // 
