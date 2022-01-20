@@ -30,20 +30,16 @@ namespace AutoScout24
         {
             System.Data.OleDb.OleDbCommand cmd;
             System.Data.OleDb.OleDbDataReader rs;
-
-
             cmd = new System.Data.OleDb.OleDbCommand();
             cmd.Connection = conn;
-
             string sql;
             sql = "SELECT Classe, Nome FROM Prodotti;";
             cmd.CommandText = sql;
-
             rs = cmd.ExecuteReader();
             ListaVeicoli.Text = "";
             while (rs.Read())
             {
-                ListaVeicoli.
+                //ListaVeicoli.
             }
         }
     }

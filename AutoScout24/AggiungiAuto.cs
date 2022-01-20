@@ -24,7 +24,7 @@ namespace AutoScout24
             cmd = new System.Data.OleDb.OleDbCommand();
             cmd.Connection = conn;
             string sql;
-            sql = "INSERT into Prodotti (codiceprodotto,marca,cilindrata,modello,tipologia,n_chilometro,url,immatricolazione,prezzo,username) VALUES('"+codiceTxt.Text+"','"+ marcaTxt.Text+"','"+ Int32.Parse(cilindrataTxt.Text) + "','" + modelloTxt.Text + "','" + tipologiaTxt.Text + "','" + Int32.Parse(kmTxt.Text) + "','" + urlTxt.Text + "',"  + dateTimePicker1.Value.ToString("dd/MM/yyyy") + ",'" + float.Parse(prezzoTxt.Text) + "','" + usernameTxt.Text + "');";
+            sql = "INSERT into Prodotti (codiceprodotto,marca,cilindrata,modello,tipologia,n_chilometro,url,immatricolazione,prezzo,username) VALUES('" + codiceTxt.Text + "','" + marcaTxt.Text + "','" + Int32.Parse(cilindrataTxt.Text) + "','" + modelloTxt.Text + "','" + tipologiaTxt.Text + "','" + Int32.Parse(kmTxt.Text) + "','" + urlTxt.Text + "'," + dateTimePicker1.Value.ToString("dd/MM/yyyy") + ",'" + float.Parse(prezzoTxt.Text) + "','" + usernameTxt.Text + "');";
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
             MessageBox.Show("Inserimento effettuato");

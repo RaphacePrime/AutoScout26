@@ -18,21 +18,8 @@ namespace AutoScout24
             InitializeComponent();
         }
 
-        // TODO: cambia qui
-        //private void prodottiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-        //    this.prodottiBindingSource.EndEdit();
-        //    this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
-
-        //}
-
         private void Admin_Load(object sender, EventArgs e)
         {
-
-            //    this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
-
-            //    this.prodottiTableAdapter.Fill(this.mazzoLuzziDataSet.Prodotti);
             string connstr;
             connstr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=MazzoLuzzi.accdb;";
             conn = new System.Data.OleDb.OleDbConnection(connstr);
@@ -43,11 +30,8 @@ namespace AutoScout24
         {
             System.Data.OleDb.OleDbCommand cmd;
             System.Data.OleDb.OleDbDataReader rs;
-
-
             cmd = new System.Data.OleDb.OleDbCommand();
             cmd.Connection = conn;
-
             string sql;
             sql = "SELECT * FROM Prodotti;";
             cmd.CommandText = sql;

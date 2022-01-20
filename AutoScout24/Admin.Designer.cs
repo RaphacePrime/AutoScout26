@@ -39,7 +39,6 @@ namespace AutoScout24
             this.listBoxAuto = new System.Windows.Forms.ListBox();
             this.buttonAggiungi = new System.Windows.Forms.Button();
             this.buttonElimina = new System.Windows.Forms.Button();
-            this.buttonModifica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).BeginInit();
@@ -103,22 +102,12 @@ namespace AutoScout24
             this.buttonElimina.UseVisualStyleBackColor = true;
             this.buttonElimina.Click += new System.EventHandler(this.buttonElimina_Click);
             // 
-            // buttonModifica
-            // 
-            this.buttonModifica.Location = new System.Drawing.Point(180, 12);
-            this.buttonModifica.Name = "buttonModifica";
-            this.buttonModifica.Size = new System.Drawing.Size(78, 59);
-            this.buttonModifica.TabIndex = 5;
-            this.buttonModifica.Text = "Modifica auto";
-            this.buttonModifica.UseVisualStyleBackColor = true;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1109, 642);
-            this.Controls.Add(this.buttonModifica);
             this.Controls.Add(this.buttonElimina);
             this.Controls.Add(this.buttonAggiungi);
             this.Controls.Add(this.listBoxAuto);
@@ -144,6 +133,5 @@ namespace AutoScout24
         private System.Windows.Forms.ListBox listBoxAuto;
         private System.Windows.Forms.Button buttonAggiungi;
         private System.Windows.Forms.Button buttonElimina;
-        private System.Windows.Forms.Button buttonModifica;
     }
 }

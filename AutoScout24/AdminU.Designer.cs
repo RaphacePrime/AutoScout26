@@ -37,7 +37,6 @@ namespace AutoScout24
             this.listBoxU = new System.Windows.Forms.ListBox();
             this.buttonElimina = new System.Windows.Forms.Button();
             this.buttonAggiungi = new System.Windows.Forms.Button();
-            this.buttonModifica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -90,22 +89,12 @@ namespace AutoScout24
             this.buttonAggiungi.UseVisualStyleBackColor = true;
             this.buttonAggiungi.Click += new System.EventHandler(this.buttonAggiungi_Click);
             // 
-            // buttonModifica
-            // 
-            this.buttonModifica.Location = new System.Drawing.Point(180, 12);
-            this.buttonModifica.Name = "buttonModifica";
-            this.buttonModifica.Size = new System.Drawing.Size(78, 59);
-            this.buttonModifica.TabIndex = 3;
-            this.buttonModifica.Text = "Modifica utente selezionata";
-            this.buttonModifica.UseVisualStyleBackColor = true;
-            // 
             // AdminU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(890, 642);
-            this.Controls.Add(this.buttonModifica);
             this.Controls.Add(this.buttonAggiungi);
             this.Controls.Add(this.buttonElimina);
             this.Controls.Add(this.listBoxU);
@@ -127,6 +116,5 @@ namespace AutoScout24
         private System.Windows.Forms.ListBox listBoxU;
         private System.Windows.Forms.Button buttonElimina;
         private System.Windows.Forms.Button buttonAggiungi;
-        private System.Windows.Forms.Button buttonModifica;
     }
 }

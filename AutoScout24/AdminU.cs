@@ -18,15 +18,6 @@ namespace AutoScout24
             InitializeComponent();
         }
 
-        // TODO: cambia qui
-        //private void utentiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-        //    this.utentiBindingSource.EndEdit();
-        //    this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
-
-        //}
-
         private void AdminU_Load(object sender, EventArgs e)
         {
             //    // TODO: questa riga di codice carica i dati nella tabella 'mazzoLuzziDataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
@@ -51,7 +42,7 @@ namespace AutoScout24
             rs = cmd.ExecuteReader();
             while (rs.Read())
             {
-                listBoxU.Items.Add(rs["username"].ToString() + " " + rs["nomecognome"].ToString() +" "+ rs["codicefiscale"].ToString() +" "+ rs["password"].ToString() +" "+ rs["saldo"].ToString());
+                listBoxU.Items.Add(rs["username"].ToString() + " " + rs["nomecognome"].ToString() + " " + rs["codicefiscale"].ToString() + " " + rs["password"].ToString() + " " + rs["saldo"].ToString());
             }
         }
 
