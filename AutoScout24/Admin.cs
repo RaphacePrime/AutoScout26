@@ -47,6 +47,7 @@ namespace AutoScout24
         {
             AggiungiAuto m = new AggiungiAuto();
             m.Show();
+            
         }
 
         private void buttonElimina_Click(object sender, EventArgs e)

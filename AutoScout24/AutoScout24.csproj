@@ -120,6 +120,9 @@
     <EmbeddedResource Include="AggiungiAuto.resx">
       <DependentUpon>AggiungiAuto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AggiungiUtente.resx">
+      <DependentUpon>AggiungiUtente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogo2.resx">
       <DependentUpon>Catalogo2.cs</DependentUpon>
     </EmbeddedResource>

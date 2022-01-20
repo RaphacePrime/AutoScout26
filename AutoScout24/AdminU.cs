@@ -48,7 +48,9 @@ namespace AutoScout24
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
         {
-
+            AggiungiUtente a = new AggiungiUtente();
+            a.ShowDialog();
+            caricaListBox();
         }
 
         private void buttonElimina_Click(object sender, EventArgs e)
