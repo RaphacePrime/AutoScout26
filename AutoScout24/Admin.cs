@@ -51,7 +51,16 @@ namespace AutoScout24
 
         private void buttonElimina_Click(object sender, EventArgs e)
         {
-
+            string m = listBoxAuto.SelectedItem.ToString();
+            string[] ml = m.Split(' ');
+            System.Data.OleDb.OleDbCommand cmd;
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+            string sql;
+            sql = "DELETE from Prodotti where codiceprodotto = '" + ml[0] + "';";
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+            caricaListBox();
         }
     }
 }
