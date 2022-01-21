@@ -13,6 +13,7 @@ namespace AutoScout24
     public partial class Catalogo2 : Form
     {
         System.Data.OleDb.OleDbConnection conn;
+        private List<string>carrello = new List<string>();
         public Catalogo2()
         {
             InitializeComponent();
@@ -26,21 +27,29 @@ namespace AutoScout24
             conn.Open();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void caricaListBox()
         {
             System.Data.OleDb.OleDbCommand cmd;
             System.Data.OleDb.OleDbDataReader rs;
             cmd = new System.Data.OleDb.OleDbCommand();
             cmd.Connection = conn;
             string sql;
-            sql = "SELECT Classe, Nome FROM Prodotti;";
+            sql = "SELECT * FROM Prodotti;";
             cmd.CommandText = sql;
+            ListaVeicoli.Items.Clear();
             rs = cmd.ExecuteReader();
-            ListaVeicoli.Text = "";
             while (rs.Read())
             {
-                //ListaVeicoli.
+                ListaVeicoli.Items.Add(rs["codiceprodotto"].ToString() + " " + rs["marca"].ToString() + " " + rs["cilindrata"].ToString() + " " + rs["modello"].ToString() + " " + rs["tipologia"].ToString() + " " + rs["n_chilometro"].ToString() + " " + rs["url"].ToString() + " " + rs["immatricolazione"].ToString() + " " + rs["prezzo"].ToString() + " " + rs["username"].ToString());
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string m = ListaVeicoli.SelectedItem.ToString();
+            string[] ml = m.Split(' ');
+            carrello.Add(ml[0]);
+        }
+    }
     }
 }

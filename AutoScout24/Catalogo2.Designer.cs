@@ -43,7 +43,6 @@ namespace AutoScout24
             this.ListaVeicoli.Name = "ListaVeicoli";
             this.ListaVeicoli.Size = new System.Drawing.Size(158, 147);
             this.ListaVeicoli.TabIndex = 2;
-            this.ListaVeicoli.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -64,6 +63,7 @@ namespace AutoScout24
             this.button1.Size = new System.Drawing.Size(66, 63);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
