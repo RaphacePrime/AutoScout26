@@ -41,8 +41,36 @@ namespace AutoScout24
 
 
             U = new Utente();
-            //var a = new Catalogonuovo();
-            //a.ShowDialog();
+            System.Data.OleDb.OleDbCommand cmd;
+            System.Data.OleDb.OleDbDataReader rs;
+
+
+            cmd = new System.Data.OleDb.OleDbCommand();
+            cmd.Connection = conn;
+
+            string sql;
+            sql = "SELECT username, password, nomecognome, saldo, codicefiscale FROM Utenti;";
+            cmd.CommandText = sql;
+
+            rs = cmd.ExecuteReader();
+            tDati.Text = "";
+            while (rs.Read())
+            {
+                if (password == rs["password"].ToString() && username == rs["username"].ToString())
+                {
+                    tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                    U = new Utente(rs["nomecognome"].ToString(), rs["codicefiscale"].ToString(), rs["password"].ToString(), rs["username"].ToString(), float.Parse(rs["saldo"].ToString()));
+                    var a = new Catalogo2(U);
+                    a.ShowDialog();
+                    break;
+                }
+                else
+                {
+                    label3.Text = "ERRORE";
+                    label3.Visible = true;
+                }
+
+            }
             // TODO: cambia qui
             //try
             //{
@@ -71,35 +99,7 @@ namespace AutoScout24
             //}
 
 
-            System.Data.OleDb.OleDbCommand cmd;
-            System.Data.OleDb.OleDbDataReader rs;
-
-
-            cmd = new System.Data.OleDb.OleDbCommand();
-            cmd.Connection = conn;
-
-            string sql;
-            sql = "SELECT username, password, nomecognome, saldo, codicefiscale FROM Utenti;";
-            cmd.CommandText = sql;
-
-            rs = cmd.ExecuteReader();
-            tDati.Text = "";
-            while (rs.Read())
-            {
-                if(password== rs["password"].ToString() && username== rs["username"].ToString())
-                {
-                    tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
-                    U = new Utente(rs["nomecognome"].ToString(), rs["codicefiscale"].ToString(), rs["password"].ToString(), rs["username"].ToString(), float.Parse(rs["saldo"].ToString()));
-                    //a.ShowDialog();
-                    break;
-                }
-                else
-                {
-                    label3.Text = "ERRORE";
-                    label3.Visible = true;
-                }
-                
-            }
+           
 
         }
 
