@@ -87,7 +87,7 @@ namespace AutoScout24
                 cmd = new System.Data.OleDb.OleDbCommand();
                 cmd.Connection = conn;
                 sql = "SELECT * FROM Prodotti WHERE (codiceprodotto='"+ a +"');";
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 cmd.CommandText = sql;
                 checkedListBox1.Items.Clear();
                 rs = cmd.ExecuteReader();
@@ -118,8 +118,8 @@ namespace AutoScout24
                 System.Data.OleDb.OleDbDataReader rs;
                 cmd = new System.Data.OleDb.OleDbCommand();
                 cmd.Connection = conn;
-                sql = "UPDATE Utenti SET saldo = '"+nuovosaldo+"' WHERE (codicefiscale = '"+U.username+"');";
-                MessageBox.Show(sql);
+                sql = "UPDATE Utenti SET saldo = '"+nuovosaldo+"' WHERE (username = '"+U.username+"');";
+                //MessageBox.Show(sql);
                 cmd.CommandText = sql;
                 rs = cmd.ExecuteReader();
 
@@ -130,7 +130,7 @@ namespace AutoScout24
                 string[] ml = m.Split(' ');
                 string a = ml[0];
                 sql = "DELETE FROM Prodotti WHERE (codiceprodotto='" + a + "');";
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 cmd.CommandText = sql;
                 rs = cmd.ExecuteReader();
 

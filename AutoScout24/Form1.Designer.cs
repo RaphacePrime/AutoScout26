@@ -65,7 +65,6 @@ namespace AutoScout24
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tDati = new System.Windows.Forms.TextBox();
             usernameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).BeginInit();
@@ -382,20 +381,12 @@ namespace AutoScout24
             this.label9.TabIndex = 19;
             this.label9.Text = "Username e Password: alunno";
             // 
-            // tDati
-            // 
-            this.tDati.Location = new System.Drawing.Point(22, 146);
-            this.tDati.Name = "tDati";
-            this.tDati.Size = new System.Drawing.Size(228, 20);
-            this.tDati.TabIndex = 20;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(834, 450);
-            this.Controls.Add(this.tDati);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -416,6 +407,7 @@ namespace AutoScout24
             this.Controls.Add(this.f1_catalogo);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).EndInit();
@@ -461,7 +453,6 @@ namespace AutoScout24
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tDati;
     }
 }
 

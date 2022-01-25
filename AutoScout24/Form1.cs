@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace AutoScout24
 {
@@ -53,12 +54,12 @@ namespace AutoScout24
             cmd.CommandText = sql;
 
             rs = cmd.ExecuteReader();
-            tDati.Text = "";
+            //tDati.Text = "";
             while (rs.Read())
             {
                 if (password == rs["password"].ToString() && username == rs["username"].ToString())
                 {
-                    tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                    //tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
                     U = new Utente(rs["nomecognome"].ToString(), rs["codicefiscale"].ToString(), rs["password"].ToString(), rs["username"].ToString(), float.Parse(rs["saldo"].ToString()));
                     var a = new Catalogo2(U);
                     a.ShowDialog();
@@ -187,12 +188,12 @@ namespace AutoScout24
             cmd.CommandText = sql;
 
             rs = cmd.ExecuteReader();
-            tDati.Text = "";
+            //tDati.Text = "";
             while (rs.Read())
             {
                 if (password == rs["password"].ToString() && username == rs["username"].ToString())
                 {
-                    tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
+                 //   tDati.AppendText(rs["username"].ToString() + " - " + rs["password"].ToString() + Environment.NewLine);
                     U = new Utente(rs["nomecognome"].ToString(), rs["codicefiscale"].ToString(), rs["password"].ToString(), rs["username"].ToString(), float.Parse(rs["saldo"].ToString()));
                     var a = new Vendi(U);
                     a.ShowDialog();
@@ -206,7 +207,36 @@ namespace AutoScout24
 
             }
         }
+        private void CopiaFile()
+        {
 
-        
+            const string test1 = "copy";
+            const string test2 = "MazzoLuzzi.accdb";
+            const string test3 = "..\\..\\MazzoLuzzi.accdb";
+
+            ProcessStartInfo processo = new ProcessStartInfo();
+            processo.CreateNoWindow = false;
+            processo.UseShellExecute = false;
+            processo.FileName = "cmd.exe";
+            processo.Arguments = "/c " + test1 + " " + test2 + " " + test3;
+
+            try
+            {
+
+                using (Process ProcessoExe = Process.Start(processo))
+                {
+                    ProcessoExe.WaitForExit();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CopiaFile();
+        }
     }
 }
