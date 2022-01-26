@@ -15,14 +15,24 @@ namespace AutoScout24
     {
         Utente U;
         System.Data.OleDb.OleDbConnection conn;
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Definiton of variable "conn" we will use in the form </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: cambia qui
-            //this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
+            
             string connstr;
             connstr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=MazzoLuzzi.accdb;";
 
@@ -33,6 +43,19 @@ namespace AutoScout24
 
 
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   
+        ///             Checking if username and password inputted by user
+        ///             corresponds to an account registered in the database
+        ///             then if the check is true, it opens "Catalogo" Form        
+        ///  </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         private void f1_catalogo_Click(object sender, EventArgs e)
         {
@@ -72,37 +95,20 @@ namespace AutoScout24
                 }
 
             }
-            // TODO: cambia qui
-            //try
-            //{
-            //    MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
-            //    string password1 = riga.password;// label3.Text = riga.password;
-            //    if(password== riga.password)
-            //    {
-            //        U = new Utente(riga.nomecognome, riga.codicefiscale, riga.password, riga.username, riga.saldo);
-            //        var a = new Catalogo(U);
-            //        a.ShowDialog();
-            //    }
-            //    else
-            //    {
-            //        label3.Text = "Password errata";
-            //        MessageBox.Show("Password errata");
-            //    }
-
-
-
-            //}
-            //catch(Exception fe)
-            //{
-            //    MessageBox.Show("UTENTE NON ESISTENTE");
-            //    label3.Text = "Username non esistente";
-            //    label3.Visible=true;
-            //}
-
+           
 
            
 
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Access for admins to modify "Prodotti" table in the DB</summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         private void f1_admin_Click(object sender, EventArgs e)
         {
@@ -119,15 +125,15 @@ namespace AutoScout24
             }
             
         }
-        // TODO: cambia qui
 
-        //private void utentiBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-        //    this.utentiBindingSource.EndEdit();
-        //    this.tableAdapterManager.UpdateAll(this.mazzoLuzziDataSet);
-
-        //}
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Access for admins to modify "Utenti" table in the DB </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -144,6 +150,20 @@ namespace AutoScout24
             }
         }
 
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>  
+        ///             Checking if username and password inputted by user
+        ///             corresponds to an account registered in the database
+        ///             then if the check is true, it opens "Vendi" Form
+        ///             
+        /// </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         private void button2_Click(object sender, EventArgs e)
         {
             label3.Visible = false;
@@ -152,29 +172,7 @@ namespace AutoScout24
             U = new Utente();
             
             
-            // TODO: cambia qui
-
-            //try
-            //{
-            //    MazzoLuzziDataSet.UtentiRow riga = this.mazzoLuzziDataSet.Utenti.FindByusername(username);
-            //    string password1 = riga.password;// label3.Text = riga.password;
-            //    if (password == password1)
-            //    {
-
-            //    }
-            //    else
-            //    {
-            //        label3.Text = "Password errata";
-            //    }
-
-
-
-            //}
-            //catch (Exception fe)
-            //{
-            //    label3.Text = "Username non esistente";
-            //    label3.Visible = true;
-            //}
+          
 
             System.Data.OleDb.OleDbCommand cmd;
             System.Data.OleDb.OleDbDataReader rs;
@@ -207,6 +205,16 @@ namespace AutoScout24
 
             }
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   
+        ///             Saving the progress of our database
+        ///             after we modified it.
+        /// </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///-------------------------------------------------------------------------------------------------
+
         private void CopiaFile()
         {
 

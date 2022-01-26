@@ -26,6 +26,13 @@ namespace AutoScout24
             conn.Open();
             caricaListBox();
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Function to update the listbox of the form </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///-------------------------------------------------------------------------------------------------
+
         private void caricaListBox()
         {
             System.Data.OleDb.OleDbCommand cmd;
@@ -42,6 +49,15 @@ namespace AutoScout24
                 listBoxAuto.Items.Add(rs["codiceprodotto"].ToString() + " " + rs["marca"].ToString() + " " + rs["cilindrata"].ToString() + " " + rs["modello"].ToString() + " " + rs["tipologia"].ToString() + " " + rs["n_chilometro"].ToString() + " " + rs["url"].ToString() + " " + rs["immatricolazione"].ToString() + " " + rs["prezzo"].ToString() + " " + rs["username"].ToString());
             }
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   It opens </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
         {
