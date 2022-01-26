@@ -51,7 +51,7 @@ namespace AutoScout24
         }
 
         ///-------------------------------------------------------------------------------------------------
-        /// <summary>   It opens </summary>
+        /// <summary>   It opens "AggiungiAuto" Form </summary>
         ///
         /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
         ///
@@ -65,6 +65,19 @@ namespace AutoScout24
             m.Show();
             
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   
+        ///             It deletes the selected item in the listbox
+        ///             from the DB
+        ///             
+        /// </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         private void buttonElimina_Click(object sender, EventArgs e)
         {
