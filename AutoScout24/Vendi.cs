@@ -23,7 +23,19 @@ namespace AutoScout24
         {
             InitializeComponent();
         }
-        
+
+        /**********************************************************************************************//**
+         * \fn  private void Vendi_Load(object sender, EventArgs e)
+         *
+         * \brief   Permente di usare il database 
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         *
+         * \param   sender  Source of the event.
+         * \param   e       Event information.
+         **************************************************************************************************/
+
         private void Vendi_Load(object sender, EventArgs e)
         {
             string connstr;
@@ -33,6 +45,18 @@ namespace AutoScout24
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
         }
+
+        /**********************************************************************************************//**
+         * \fn  private void buttonAggiungi_Click_1(object sender, EventArgs e)
+         *
+         * \brief   Aggiunta prodotti nel database
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         *
+         * \param   sender  Source of the event.
+         * \param   e       Event information.
+         **************************************************************************************************/
 
         private void buttonAggiungi_Click_1(object sender, EventArgs e)
         {

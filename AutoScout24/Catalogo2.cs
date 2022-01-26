@@ -26,6 +26,18 @@ namespace AutoScout24
             InitializeComponent();
         }
 
+        /**********************************************************************************************//**
+         * \fn  private void Catalogo2_Load(object sender, EventArgs e)
+         *
+         * \brief   Consente l accesso al database
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         *
+         * \param   sender  Source of the event.
+         * \param   e       Event information.
+         **************************************************************************************************/
+
         private void Catalogo2_Load(object sender, EventArgs e)
         {
             string connstr;
@@ -34,6 +46,15 @@ namespace AutoScout24
             conn.Open();
             caricaListBox();
         }
+
+        /**********************************************************************************************//**
+         * \fn  private void caricaListBox()
+         *
+         * \brief   Carica nella list box i veicoli
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         **************************************************************************************************/
 
         private void caricaListBox()
         {
@@ -52,6 +73,18 @@ namespace AutoScout24
             }
         }
 
+        /**********************************************************************************************//**
+         * \fn  private void button1_Click(object sender, EventArgs e)
+         *
+         * \brief   Event handler. Called by button1 for click events
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         *
+         * \param   sender  Source of the event.
+         * \param   e       Event information.
+         **************************************************************************************************/
+
         private void button1_Click(object sender, EventArgs e)
         {
             if(ListaVeicoli.Items.Count!=0)
@@ -68,6 +101,15 @@ namespace AutoScout24
             }
            
         }
+
+        /**********************************************************************************************//**
+         * \fn  private void caricaComboBox()
+         *
+         * \brief   Carica i dati presenti nel database
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         **************************************************************************************************/
 
         private void caricaComboBox()
         {
@@ -102,6 +144,18 @@ namespace AutoScout24
             }
             
         }
+
+        /**********************************************************************************************//**
+         * \fn  private void compra_Click(object sender, EventArgs e)
+         *
+         * \brief   Quando l utente acquista viene aggiornato il suo saldo, ed eliminiamo dal database il prodotto comprato
+         *
+         * \author  Luzzana
+         * \date    26/01/2022
+         *
+         * \param   sender  Source of the event.
+         * \param   e       Event information.
+         **************************************************************************************************/
 
         private void compra_Click(object sender, EventArgs e)
         {
