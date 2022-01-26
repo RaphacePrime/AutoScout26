@@ -18,6 +18,17 @@ namespace AutoScout24
             InitializeComponent();
         }
 
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   
+        ///             It inserts in the databse the new "Prodotto" created by the user
+        /// </summary>
+        ///
+        /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         private void buttonAggiungi_Click(object sender, EventArgs e)
         {
             System.Data.OleDb.OleDbCommand cmd;
