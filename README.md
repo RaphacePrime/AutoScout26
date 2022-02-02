@@ -14,7 +14,7 @@ A quick introduction of the minimal setup you need to get running.
 git clone https://github.com/RaphacePrime/AutoScout26
 ```
 
-open your project
+open the solution,
 press F12 for running the code
 
 If you don't know the fundamentals of Databases in C#, 
@@ -25,14 +25,12 @@ before continuing
 
 Database: MazzoLuzzi.accdb (Access Database)
 Table Utenti: It's the users table
-	-->username	nomecognome	codicefiscale	password	saldo
-	-->armatim	Armati Maurizio	ARMMAU1234567890	armati	94.200,00 €
-	-->Luzzi03	Nicola Luzzana	NCLLZZ0987654321	stabello	6.400,00 €
-	-->RaphacePrime	Raphael Mazzoleni	MZZRHL1234567890	raphace	7.000,00 €
-	-->Squalo	Davide Scotti	DVDSCT123467890	potranga	1.520,00 €
+	-->username;nomecognome;codicefiscale;password;saldo
+
 Table Prodotti: It's the cars table
 	-->codiceprodotto	marca	cilindrata	modello	tipologia	n_chilometro	url	immatricolazione	prezzo	username
-	-->CAR-0001	Fiat	1200	Panda	Utilitaria	110989	https://google.com	00:03:55	890,00 €	RaphacePrime
+	
+#Forms
 
 ### Form Form1(Menu)
 
@@ -41,7 +39,7 @@ where you can login as a user to the catalog or to the form for selling a car.
 With username "alunno" and password "alunno" you can jump into forms for the Admins
 where you can directly modify the tables of the database
 
-## Form Catalogo2(Catalog)
+### Form Catalogo2(Catalog)
 
 Here you can buy the cars inserted in the DB, but first the program will check 
 if the user has enough money, then it will update the user's "saldo" with the money 
