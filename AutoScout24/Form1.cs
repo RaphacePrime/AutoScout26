@@ -22,7 +22,7 @@ namespace AutoScout24
         }
 
         ///-------------------------------------------------------------------------------------------------
-        /// <summary>   Definiton of variable "conn" we will use in the form </summary>
+        /// <summary>   Definiton of variables for the connection we will use in the form </summary>
         ///
         /// <remarks>   Mazzoleni, 26/01/2022. </remarks>
         ///
