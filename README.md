@@ -21,7 +21,7 @@ If you don't know the fundamentals of Databases in C#,
 please check https://www.geeksforgeeks.org/basic-database-operations-using-c-sharp/
 before continuing
 
-### Databases
+## Databases
 
 Database: MazzoLuzzi.accdb (Access Database)
 Table Utenti: It's the users table
